@@ -8,5 +8,5 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine as runtime
 WORKDIR /app
 COPY --from=build /app/published-app /app
 ENV ASPNETCORE_ENVIRONMENT=container
-EXPOSE 80
+
 ENTRYPOINT [ "dotnet", "/app/api.dll" ]
