@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotapp #The name of the Kubernetes Service to be created in the Kubernetes cluster
+spec:
+  selector:
+    app: dotapp
+  type: LoadBalancer #Type of the Kubernetes Service
+  ports:
+    port: 80 #Service port
+    targetPort: 80 #The port for the application container
