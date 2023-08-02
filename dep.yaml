@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dapp #The name of the Kubernetes Deployment to be created in the Kubernetes cluster
+spec:
+  replicas: 2 #The number of pods to be created in the Kubernetes cluster for the application container
+  selector:
+    matchLabels:
+      app: dapp
+  template:
+    metadata:
+      labels:
+        app: dapp 
+    spec:
+      containers:
+      - name: dapp #The name of the application container
+        image: sivashree03/dapp:tagname #The Docker image for building the application container
+        ports:
+        - containerPort: 80 #The port for the application   container
