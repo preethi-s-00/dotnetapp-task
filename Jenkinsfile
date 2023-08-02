@@ -11,7 +11,7 @@ pipeline {
       steps {
         script{
         sh 'docker build -t dimage .'
-        sh 'docker tag dimagelatest sivashree03/dapp:tagname'
+        sh 'docker tag dimage:latest sivashree03/dapp:tagname'
         docker.withRegistry("", "DockerHub") {
         def image = docker.image("sivashree03/dapp:tagname");
           image.push()
